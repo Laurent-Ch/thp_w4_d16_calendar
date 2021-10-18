@@ -1,5 +1,4 @@
-# migth be necessary
-# require 'time'
+require 'time'
 class Event
   attr_accessor :start_date, :duration, :title, :attendees
 
@@ -8,7 +7,7 @@ class Event
     # Quick template: 2021-10-18 16:00"
     @start_date = Time.parse(start)
     # Integer:
-    @duration = duration
+    @duration = (duration * 60)
     # String:
     @title = title
     # Array:
@@ -18,6 +17,19 @@ class Event
   def postpone_24h
     @start_date += (24 * 60 * 60)
   end
+
+  def end_date
+    return @start_date + @duration
+  end
+
+  def is_past?
+    @start_date < Time.now ? true : false
+  end
+
+  def is_future?
+    !is_past? ? true : false
+  end
+
 end
 
 # Quick object
