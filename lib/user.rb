@@ -17,4 +17,14 @@ class User
   def self.all
     return @@all_users
   end
+
+  def self.find_by_email(email)
+    @@all_users.each do |i|
+      if i[1].include?(email)
+        return "L'utilisateur s'appelle #{i[0]} et il/elle a #{i[2]} ans."
+      end
+    end
+    puts "Cet email n'est lié à aucun utilisateur enregistré."
+  end
 end
+

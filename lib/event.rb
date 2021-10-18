@@ -34,6 +34,14 @@ class Event
     return false if is_past?
     @start_date < (Time.now + (30 * 60)) ? true : false
   end
+
+  def to_s
+    puts "Titre : #{@title}"
+    puts "Date de début : #{@start_date}"
+    puts "Durée : #{@duration / 60} minutes"
+    puts "Invités : #{@attendees}"
+  end
 end
+
 # Quick object
 # meeting = Event.new("2021-10-18 16:00", 30, "codons!", ["truc@machin.com", "bidule@chose.fr"])
