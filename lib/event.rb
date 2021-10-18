@@ -41,6 +41,9 @@ class Event
     puts "Durée : #{@duration / 60} minutes"
     puts "Invités : #{@attendees}"
   end
+
+
+
 end
 
 # Quick object
