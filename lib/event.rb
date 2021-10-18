@@ -30,7 +30,10 @@ class Event
     !is_past? ? true : false
   end
 
+  def is_soon?
+    return false if is_past?
+    @start_date < (Time.now + (30 * 60)) ? true : false
+  end
 end
-
 # Quick object
 # meeting = Event.new("2021-10-18 16:00", 30, "codons!", ["truc@machin.com", "bidule@chose.fr"])
