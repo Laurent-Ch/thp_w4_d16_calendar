@@ -1,5 +1,5 @@
 class User
-  attr_accessor :email, :age
+  attr_accessor :name, :email, :age
   @@all_users = []
 
   def initialize(user_name, user_email, user_age)
