@@ -3,8 +3,11 @@
 class Event
 attr_accessor :start_date, :duration, :title, :attendees
 
-def initialize(start)
+def initialize(start, duration, title, list)
   @start_date = Time.parse(start)
+  @duration = duration
+  @title = title
+  @attendees = list
 end
 
 
@@ -13,7 +16,7 @@ end
 # @title est un string
 # @ attendees est une array, liste d'emails
 # Résultat final : 
-#Event.new("2019-01-13 09:00", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
+#Event.new("2021-10-18 16:00", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
 # Time.parse("2010-10-31 12:00")
 
 
