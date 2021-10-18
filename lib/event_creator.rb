@@ -20,7 +20,7 @@ class EventCreator
 
     puts "Génial. Qui va participer ? Balance leurs e-mails"
     print '>'
-    @event_attendees = gets.chomp
+    @event_attendees = gets.chomp.split(',')
 
     event = Event.new(@event_date, @event_duration, @event_title, @event_attendees).to_s
 
